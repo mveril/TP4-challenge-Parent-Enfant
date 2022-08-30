@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PicturesService } from './core/services/pictures.service';
+import { Item } from './models/item';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TP4-challenge-Parent-Enfant';
+  collection!: Item[]
+  title : String ="Appli photo"
+  constructor(private pictureService:PicturesService){
+    pictureService.Collection.subscribe((data)=>{
+      this.collection=data;
+      console.log(this.collection,"Collection")
+    })
+  }
 }
