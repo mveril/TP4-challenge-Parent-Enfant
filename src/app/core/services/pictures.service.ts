@@ -9,15 +9,15 @@ import { Item } from 'src/app/models/item';
 export class PicturesService {
   private collection$!: Observable<Item[]>
   constructor(private http: HttpClient) {
-    this.Collection=this.http.get<Item[]>('https://jsonplaceholder.typicode.com/photos');
+    this.collection=this.http.get<Item[]>('https://jsonplaceholder.typicode.com/photos');
 
   }
 
-  public get Collection() {
+  public get collection() {
     return this.collection$;
   }
 
-  public set Collection(value) {
+  public set collection(value) {
     this.collection$ = value;
     console.log(value,"Observable initialized");
   }

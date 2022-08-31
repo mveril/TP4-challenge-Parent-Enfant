@@ -11,7 +11,7 @@ export class AppComponent {
   collection!: Item[]
   title : String ="Appli photo"
   constructor(private pictureService:PicturesService){
-    pictureService.Collection.subscribe((data)=>{
+    pictureService.collection.subscribe((data)=>{
       this.collection=data;
       console.log(this.collection,"Collection")
     })
